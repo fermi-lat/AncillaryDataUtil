@@ -1,7 +1,7 @@
 # -*- python -*-
-# $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/AncillaryDataUtil/SConscript,v 1.1 2008/08/15 21:22:39 ecephas Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/AncillaryDataUtil/SConscript,v 1.2 2008/09/16 19:31:04 ecephas Exp $
 # Authors: N.Omodei <nicola.omodei@pi.infn.it>
-# Version: AncillaryDataUtil-01-00-02
+# Version: AncillaryDataUtil-01-00-03
 Import('baseEnv')
 Import('listFiles')
 Import('packages')
@@ -14,5 +14,12 @@ AncillaryDataUtil = libEnv.StaticLibrary('AncillaryDataUtil', listFiles(['src/*.
 progEnv.Tool('AncillaryDataUtilLib')
 test_AncillaryDataUtil = progEnv.Program('test_AncillaryDataUtil',['src/test/testMain.cxx'])
 
-progEnv.Tool('registerObjects', package = 'AncillaryDataUtil', libraries = [AncillaryDataUtil], testApps = [test_AncillaryDataUtil], includes = listFiles(['AncillaryDataUtil/*.h']))
+progEnv.Tool('registerObjects', package = 'AncillaryDataUtil',
+             libraries = [AncillaryDataUtil],
+             testApps = [test_AncillaryDataUtil],
+             includes = listFiles(['AncillaryDataUtil/*.h']),
+             data = listFiles(['data/*'],recursive=True))
+
+
+
 
