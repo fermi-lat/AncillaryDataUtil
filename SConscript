@@ -1,7 +1,7 @@
 # -*- python -*-
-# $Header: /nfs/slac/g/glast/ground/cvs/GlastRelease-scons/AncillaryDataUtil/SConscript,v 1.6 2009/11/06 01:50:53 jrb Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/AncillaryDataUtil/SConscript,v 1.7 2010/06/11 00:32:49 jrb Exp $
 # Authors: N.Omodei <nicola.omodei@pi.infn.it>
-# Version: AncillaryDataUtil-01-00-04
+# Version: AncillaryDataUtil-01-00-05
 Import('baseEnv')
 Import('listFiles')
 Import('packages')
